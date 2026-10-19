@@ -37,13 +37,19 @@
       )
 
       // Calculate Product Cost
-      const sock = Number(10);
-      const tShirt = Number(8);
-
+      const sock = 10;
+      const tShirt = 8;
       const productCost = sock + (tShirt * 2);
+      const shippingCost = 5;
+      const totalCost = productCost + shippingCost;
 
       const productDiv = (
-        <p>Product Cost: ${productCost}</p>
+        <div>
+          <p>Product Cost: ${productCost}</p>
+          <p>Shipping Cost: ${shippingCost}</p>
+          <p>Total Cost: ${totalCost}</p>
+        </div>
+        
       )
       
 
