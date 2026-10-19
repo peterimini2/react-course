@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise Page</title>
+</head>
+<body>
+ <div class="my-container"></div>
+ <div class="container-2"></div>
+ <div class="cart-div"></div>
+ <div class="product-div"></div>
+
+  <script src="https://unpkg.com/supersimpledev/react.js"></script>
+  <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+  <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+  <script type="text/babel">
+
+    const div = (
+        <button>
+          Good job
+        </button>
+      );
+
+      const div2 = (
+        <p>My name is Peter</p>
+      )
+
+      const cartDiv = (
+        <div>
+          <p>Cotton Socks</p>
+          <p>Price: $10</p>
+          <button>Add to Cart</button>
+        </div>
+      )
+
+      // Calculate Product Cost
+      const sock = Number(10);
+      const tShirt = Number(8);
+
+      const productCost = sock + (tShirt * 2);
+
+      const productDiv = (
+        <p>Product Cost: ${productCost}</p>
+      )
+      
+
+      const container = document.querySelector('.my-container');
+      ReactDOM.createRoot(container).render(div);
+
+      const containerTwo = document.querySelector('.container-2');
+      ReactDOM.createRoot(containerTwo).render(div2);
+
+      const cartDisplay = document.querySelector('.cart-div');
+      ReactDOM.createRoot(cartDisplay).render(cartDiv);
+
+      const productDisplay = document.querySelector('.product-div');
+      ReactDOM.createRoot(productDisplay).render(productDiv)
+      
+  </script>
+</body>
+</html>
