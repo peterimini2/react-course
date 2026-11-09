@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chatbot</title>
+  <title>Chatbot App</title>
 </head>
 <body>
   <div class="js-container"></div>
@@ -55,32 +55,52 @@
         );
       }
 
+      function ChatMessages() {
+        const chatMessages = [{
+          message: 'hello chatbot',
+            sender: 'user',
+            id: 'id1'
+          }, {
+            message: 'Hello! How can I help you?',
+            sender: 'robot',
+            id: 'id2'
+          }, {
+            message: 'Can you get me todays date?',
+            sender: 'user',
+            id: 'id3'
+          }, {
+            message: 'Today is October 23',
+            sender: 'robot',
+            id: 'id4'
+        }];
+
+        return (
+          <>
+          
+            {chatMessages.map((chatMessage) => {
+              return (
+                <ChatMessage 
+                message={chatMessage.message}
+                sender={chatMessage.sender}
+                key={chatMessage.id}
+                />
+              );
+            })}
+          </>
+        );
+      }
+
       function App () {
         return (
           <>
             <ChatInput />
-            <ChatMessage 
-              message="Hello chatbot" 
-              sender="user" 
-            />
-            <ChatMessage 
-              message="Hello! How can I help you?" 
-              sender="robot"
-            />
-            <ChatMessage 
-              message="Can you get me today's date?" 
-              sender="user"
-            />
-            <ChatMessage 
-              message="Today is October 23"
-              sender="robot"
-            />
+            <ChatMessages />
         </>
         )
       }
 
       const container = document.querySelector('.js-container');
-      ReactDOM.createRoot(container).render(<App/>);
+      ReactDOM.createRoot(container).render(<App />);
     </script>
 </body>
 </html>
